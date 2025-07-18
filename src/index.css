@@ -21,12 +21,17 @@ All colors MUST be HSL.
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
 
-    /* Neon green color palette inspired by portfolio */
-    --primary: 120 100% 50%;
-    --primary-light: 120 100% 60%;
-    --primary-dark: 120 100% 40%;
+    /* Sophisticated green color palette - reduced intensity */
+    --primary: 120 60% 45%;
+    --primary-light: 120 55% 55%;
+    --primary-dark: 120 65% 35%;
     --primary-foreground: 0 0% 8%;
-    --primary-glow: 120 100% 80%;
+    --primary-glow: 120 40% 70%;
+    --primary-subtle: 120 30% 25%;
+
+    --accent-green: 120 50% 40%;
+    --accent-green-light: 120 45% 50%;
+    --success-subtle: 120 40% 45%;
 
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 95%;
@@ -34,21 +39,21 @@ All colors MUST be HSL.
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 120 100% 15%;
-    --accent-foreground: 120 100% 50%;
+    --accent: 120 30% 15%;
+    --accent-foreground: 120 50% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 95%;
 
     /* Success and warning colors */
-    --success: 120 100% 50%;
+    --success: 120 60% 45%;
     --success-foreground: 0 0% 8%;
     --warning: 43 96% 56%;
     --warning-foreground: 0 0% 8%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 120 100% 50%;
+    --ring: 120 60% 45%;
 
     --radius: 0.5rem;
 
@@ -122,38 +127,64 @@ All colors MUST be HSL.
 
 @layer components {
   .gradient-card {
-    @apply bg-card/90 backdrop-blur-sm border border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply bg-card/90 backdrop-blur-sm border border-primary/15 shadow-lg hover:shadow-xl transition-all duration-500;
     background: var(--card-gradient);
-    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px hsl(var(--primary) / 0.1);
   }
   
   .pricing-highlight {
-    @apply bg-gradient-to-r from-primary/10 to-primary-light/10 border border-primary/30 rounded-lg p-6;
-    background: linear-gradient(135deg, hsl(var(--primary-glow)) 0%, hsl(var(--accent)) 100%);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    @apply bg-gradient-to-r from-primary/8 to-primary-light/8 border border-primary/20 rounded-xl p-8;
+    background: linear-gradient(135deg, hsl(var(--primary-glow) / 0.1) 0%, hsl(var(--accent)) 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px hsl(var(--primary) / 0.2);
   }
   
   .phase-card {
-    @apply gradient-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-300;
-    border: 1px solid hsl(var(--primary) / 0.2);
+    @apply gradient-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-500;
+    border: 1px solid hsl(var(--primary) / 0.15);
   }
   
   .section-icon {
-    @apply w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl mb-4;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    @apply w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center text-primary text-2xl mb-4;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
   
   .table-hover-row {
-    @apply hover:bg-primary/10 transition-colors duration-200;
+    @apply hover:bg-primary/8 transition-colors duration-300;
   }
   
-  .neon-text {
+  .refined-text {
     @apply text-primary;
-    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.3);
   }
   
-  .neon-border {
-    border: 2px solid hsl(var(--primary));
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), inset 0 0 10px rgba(0, 255, 0, 0.1);
+  .refined-border {
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.1), inset 0 0 15px hsl(var(--primary) / 0.05);
+  }
+  
+  .scroll-reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .scroll-reveal.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulseGlow {
+    from { box-shadow: 0 0 20px hsl(var(--primary) / 0.2); }
+    to { box-shadow: 0 0 40px hsl(var(--primary) / 0.4); }
   }
 }
