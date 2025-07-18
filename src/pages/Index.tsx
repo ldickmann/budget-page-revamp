@@ -19,9 +19,9 @@ const Index = () => {
           <ImportantConsiderations />
         </div>
         
-        <footer className="mt-16 pt-8 border-t border-border text-center">
+        <footer className="mt-16 pt-8 border-t border-primary/20 text-center">
           <p className="text-muted-foreground">
-            Proposta elaborada com 💙 para Eduardo • Desenvolvedor Júnior
+            Proposta elaborada com <span className="neon-text">💚</span> para Eduardo • <span className="neon-text">Lucas Dickmann - Web Developer</span>
           </p>
         </footer>
       </div>

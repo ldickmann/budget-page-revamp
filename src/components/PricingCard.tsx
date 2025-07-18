@@ -17,10 +17,10 @@ export function PricingCard() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex-1">
             <p className="text-lg text-muted-foreground mb-2">
-              Taxa horária de colaboração como Desenvolvedor Júnior:
+              Taxa horária - Lucas Dickmann (Web Developer):
             </p>
             <div className="flex items-center gap-2">
-              <span className="text-4xl md:text-5xl font-bold text-primary">
+              <span className="text-4xl md:text-5xl font-bold neon-text">
                 R$ 30,00
               </span>
               <span className="text-xl text-muted-foreground">/ hora</span>

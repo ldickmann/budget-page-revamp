@@ -8,47 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
 :root {
-    /* Modern gradient backgrounds */
-    --background: 0 0% 100%;
-    --background-gradient: linear-gradient(135deg, hsl(220 14% 96%) 0%, hsl(214 20% 98%) 100%);
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme with neon green accents inspired by Lucas Dickmann portfolio */
+    --background: 0 0% 8%;
+    --background-gradient: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 12%) 100%);
+    --foreground: 0 0% 95%;
 
-    /* Enhanced card system */
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --card-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    /* Enhanced card system with dark theme */
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --card-gradient: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 15%) 100%);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Premium indigo color palette */
-    --primary: 238 65% 60%;
-    --primary-light: 238 70% 70%;
-    --primary-dark: 238 60% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 238 65% 85%;
+    /* Neon green color palette inspired by portfolio */
+    --primary: 120 100% 50%;
+    --primary-light: 120 100% 60%;
+    --primary-dark: 120 100% 40%;
+    --primary-foreground: 0 0% 8%;
+    --primary-glow: 120 100% 80%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 238 65% 96%;
-    --accent-foreground: 238 65% 20%;
+    --accent: 120 100% 15%;
+    --accent-foreground: 120 100% 50%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 95%;
 
     /* Success and warning colors */
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+    --success: 120 100% 50%;
+    --success-foreground: 0 0% 8%;
     --warning: 43 96% 56%;
-    --warning-foreground: 0 0% 0%;
+    --warning-foreground: 0 0% 8%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 238 65% 60%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 120 100% 50%;
 
     --radius: 0.5rem;
 
@@ -122,24 +122,38 @@ All colors MUST be HSL.
 
 @layer components {
   .gradient-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply bg-card/90 backdrop-blur-sm border border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300;
     background: var(--card-gradient);
+    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.1);
   }
   
   .pricing-highlight {
-    @apply bg-gradient-to-r from-primary/10 to-primary-light/10 border border-primary/20 rounded-lg p-6;
+    @apply bg-gradient-to-r from-primary/10 to-primary-light/10 border border-primary/30 rounded-lg p-6;
     background: linear-gradient(135deg, hsl(var(--primary-glow)) 0%, hsl(var(--accent)) 100%);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
   }
   
   .phase-card {
     @apply gradient-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-300;
+    border: 1px solid hsl(var(--primary) / 0.2);
   }
   
   .section-icon {
-    @apply w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-4;
+    @apply w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl mb-4;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
   }
   
   .table-hover-row {
-    @apply hover:bg-primary/5 transition-colors duration-200;
+    @apply hover:bg-primary/10 transition-colors duration-200;
+  }
+  
+  .neon-text {
+    @apply text-primary;
+    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+  }
+  
+  .neon-border {
+    border: 2px solid hsl(var(--primary));
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), inset 0 0 10px rgba(0, 255, 0, 0.1);
   }
 }
