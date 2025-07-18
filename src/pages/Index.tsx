@@ -1,11 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { BudgetHeader } from "@/components/BudgetHeader";
+import { PricingCard } from "@/components/PricingCard";
+import { ProjectPhaseTable } from "@/components/ProjectPhaseTable";
+import { TimelineCard } from "@/components/TimelineCard";
+import { ConditionsCard } from "@/components/ConditionsCard";
+import { ImportantConsiderations } from "@/components/ImportantConsiderations";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <BudgetHeader />
+        
+        <div className="space-y-16">
+          <PricingCard />
+          <ProjectPhaseTable />
+          <TimelineCard />
+          <ConditionsCard />
+          <ImportantConsiderations />
+        </div>
+        
+        <footer className="mt-16 pt-8 border-t border-border text-center">
+          <p className="text-muted-foreground">
+            Proposta elaborada com 💙 para Eduardo • Desenvolvedor Júnior
+          </p>
+        </footer>
       </div>
     </div>
   );
