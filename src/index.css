@@ -132,7 +132,7 @@ All colors MUST be HSL.
   }
   
   .phase-card {
-    @apply gradient-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-300 group;
+    @apply gradient-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-300;
   }
   
   .section-icon {
