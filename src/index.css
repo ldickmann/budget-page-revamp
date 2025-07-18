@@ -7,16 +7,24 @@ All colors MUST be HSL.
 */
 
 @layer base {
-:root {
+  :root {
     /* Dark theme with neon green accents inspired by Lucas Dickmann portfolio */
     --background: 0 0% 8%;
-    --background-gradient: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 12%) 100%);
+    --background-gradient: linear-gradient(
+      135deg,
+      hsl(0 0% 8%) 0%,
+      hsl(0 0% 12%) 100%
+    );
     --foreground: 0 0% 95%;
 
     /* Enhanced card system with dark theme */
     --card: 0 0% 12%;
     --card-foreground: 0 0% 95%;
-    --card-gradient: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 15%) 100%);
+    --card-gradient: linear-gradient(
+      135deg,
+      hsl(0 0% 12%) 0%,
+      hsl(0 0% 15%) 100%
+    );
 
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
@@ -129,62 +137,79 @@ All colors MUST be HSL.
   .gradient-card {
     @apply bg-card/90 backdrop-blur-sm border border-primary/15 shadow-lg hover:shadow-xl transition-all duration-500;
     background: var(--card-gradient);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px hsl(var(--primary) / 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+      0 0 0 1px hsl(var(--primary) / 0.1);
   }
-  
+
   .pricing-highlight {
-    @apply bg-gradient-to-r from-primary/8 to-primary-light/8 border border-primary/20 rounded-xl p-8;
-    background: linear-gradient(135deg, hsl(var(--primary-glow) / 0.1) 0%, hsl(var(--accent)) 100%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px hsl(var(--primary) / 0.2);
+    @apply bg-gradient-to-r border border-primary/20 rounded-xl p-8;
+    /* Removido: from-primary/8 to-primary-light/8 */
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary-glow) / 0.1) 0%,
+      hsl(var(--accent)) 100%
+    );
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+      0 0 0 1px hsl(var(--primary) / 0.2);
   }
-  
+
   .phase-card {
     @apply gradient-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-500;
     border: 1px solid hsl(var(--primary) / 0.15);
   }
-  
+
   .section-icon {
     @apply w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center text-primary text-2xl mb-4;
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
-  
+
   .table-hover-row {
     @apply hover:bg-primary/8 transition-colors duration-300;
   }
-  
+
   .refined-text {
     @apply text-primary;
     text-shadow: 0 0 8px hsl(var(--primary) / 0.3);
   }
-  
+
   .refined-border {
     border: 1px solid hsl(var(--primary) / 0.3);
-    box-shadow: 0 0 15px hsl(var(--primary) / 0.1), inset 0 0 15px hsl(var(--primary) / 0.05);
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.1),
+      inset 0 0 15px hsl(var(--primary) / 0.05);
   }
-  
+
   .scroll-reveal {
     @apply opacity-0 translate-y-8 transition-all duration-700;
   }
-  
+
   .scroll-reveal.revealed {
     @apply opacity-100 translate-y-0;
   }
-  
+
   .floating-animation {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
-  
+
   .pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite alternate;
   }
-  
+
   @keyframes pulseGlow {
-    from { box-shadow: 0 0 20px hsl(var(--primary) / 0.2); }
-    to { box-shadow: 0 0 40px hsl(var(--primary) / 0.4); }
+    from {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+    }
   }
 }
