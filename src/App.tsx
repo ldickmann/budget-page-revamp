@@ -16,10 +16,15 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/orcamento-django" element={<DjangoProject />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/"
+            element={<Index />}
+          />
+          {/* <Route path="/orcamento-django" element={<DjangoProject />} /> */}
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
