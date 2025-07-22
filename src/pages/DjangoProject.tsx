@@ -73,8 +73,8 @@ const DjangoProject = () => {
     },
     {
       id: 2,
-      title: "Desenvolvimento do Painel Administrativo (Frontend - React/Integração)",
-      description: "Construção das interfaces de usuário no React para o painel administrativo, permitindo que o Eduardo visualize e gerencie eventos e fotos, e a integração dessas telas com as APIs do backend Django.",
+      title: "Desenvolvimento do Painel Administrativo (Frontend - Vue.js/Integração)",
+      description: "Construção das interfaces de usuário no Vue.js para o painel administrativo, permitindo que o Eduardo visualize e gerencie eventos e fotos, e a integração dessas telas com as APIs do backend Django.",
       icon: Layout,
       color: "from-green-500/20 to-green-600/20",
       totalHours: "51-78 horas",
@@ -133,7 +133,7 @@ const DjangoProject = () => {
         },
         {
           name: "Configuração de Hospedagem do Frontend",
-          description: "Garantir que o frontend React (já hospedado) se comunique corretamente com o novo backend.",
+          description: "Garantir que o frontend Vue.js (já hospedado) se comunique corretamente com o novo backend.",
           hours: "1-2 horas",
           icon: Layout
         }
@@ -157,7 +157,7 @@ const DjangoProject = () => {
       >
         <div className="text-center space-y-6">
           <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
-            Projeto Django + React
+            Projeto Django + Vue.js
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold refined-text leading-tight">
             Sistema de Gerenciamento
@@ -218,7 +218,7 @@ const DjangoProject = () => {
           <CardContent>
             <div className="grid md:grid-cols-3 gap-4">
               <ProgressBar percentage={0} label="Backend (Django)" />
-              <ProgressBar percentage={0} label="Frontend (React)" />
+              <ProgressBar percentage={0} label="Frontend (Vue.js)" />
               <ProgressBar percentage={0} label="Deploy & Infra" />
             </div>
           </CardContent>

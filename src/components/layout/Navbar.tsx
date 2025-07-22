@@ -15,10 +15,10 @@ export function Navbar() {
       description: "Sistema de orçamento web"
     },
     {
-      name: "Orçamento Django",
+      name: "Orçamento Painel Admin",
       path: "/orcamento-django",
       icon: Code,
-      description: "Sistema de fotos com Django + React"
+      description: "Sistema de fotos com Django + Vue.js"
     }
   ];
 
@@ -32,7 +32,7 @@ export function Navbar() {
               <Code className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold refined-text">
-              Lucas Dickmann
+              Lucas E. Dickmann
             </span>
           </div>
 
