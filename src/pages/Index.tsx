@@ -29,9 +29,9 @@ const Index = () => {
             Progresso Estimado do Projeto
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
-            <ProgressBar percentage={100} label="Planejamento" />
-            <ProgressBar percentage={85} label="Desenvolvimento" />
-            <ProgressBar percentage={75} label="Testes & Deploy" />
+            <ProgressBar percentage={0} label="Planejamento" />
+            <ProgressBar percentage={0} label="Desenvolvimento" />
+            <ProgressBar percentage={0} label="Testes & Deploy" />
           </div>
         </div>
       </div>
@@ -44,13 +44,10 @@ const Index = () => {
         <ImportantConsiderations />
       </div>
       
-      <footer className="mt-20 pt-8 border-t border-primary/20 text-center refined-border">
-        <div className="space-y-2">
+      <footer className="mt-20 p-8 border-primary/20 text-center refined-border">
+        <div className="flex justify-center items-center">
           <p className="text-muted-foreground font-medium">
             Copyright © 2025 | Developer <span className="refined-text">Lucas Elias Dickmann</span>
-          </p>
-          <p className="text-sm text-muted-foreground/70">
-            Proposta elaborada com dedicação para Eduardo
           </p>
         </div>
       </footer>
